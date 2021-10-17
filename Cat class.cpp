@@ -27,15 +27,15 @@ public:
 
 string Cat::getName()
 {
-	return this-> name;
+	return name;
 }
 int Cat::getAge()
 {
-	return this-> age;
+	return age;
 }
 double Cat::getWeight()
 {
-	return this-> weight;
+	return weight;
 }
 
 void Cat::setName(string a)
