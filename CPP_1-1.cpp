@@ -7,6 +7,7 @@ int main(void)
 	num[2] = 30;
 	//num[3] = 40; run-time error!
 	printf("%d, %d, %d ", num[0], num[1], num[2]);
+	print("추가할 내용");
 	return 0;
 }
 //10, 20, 30
