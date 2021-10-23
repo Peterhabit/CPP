@@ -22,7 +22,7 @@ public:
 	~Cat();
 };
 
-Cat::Cat(int a)
+Cat::Cat(int a)           //Cat클래스의 생성자 함수
 {
 	age = a;
 }
