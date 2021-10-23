@@ -10,7 +10,10 @@ private:
 
 
 public:
-	Cat(int a);
+	Cat(int a)
+	{
+		age = a;
+	}
 	string getName();
 	int getAge();
 	double getWeight();
@@ -22,21 +25,17 @@ public:
 	~Cat();
 };
 
-Cat::Cat(int a)           //Cat클래스의 생성자 함수
-{
-	age = a;
-}
 string Cat::getName()
 {
-	return this-> name;
+	return this->name;
 }
 int Cat::getAge()
 {
-	return this-> age;
+	return this->age;
 }
 double Cat::getWeight()
 {
-	return this-> weight;
+	return this->weight;
 }
 
 void Cat::setName(string a)
@@ -66,7 +65,9 @@ int main()
 	Kaya.setName("카야");
 	Kaya.setWeight(3.5);
 	Kaya.meow();
-	cout << "이름 : " << Kaya.getName() << endl << "나이 : " << Kaya.getAge() << endl << "체중 : " << Kaya.getWeight() << endl;
+	cout << "이름 : " << Kaya.getName() << endl;
+	cout << "나이 : " << Kaya.getAge() << endl;
+	cout<< "체중 : " << Kaya.getWeight() << endl;
 	return 0;
 }
 //야옹~
