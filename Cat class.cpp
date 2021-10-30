@@ -7,35 +7,36 @@ private:
 	string name;
 	int age;
 	double weight;
-	
+
 
 public:
-	Cat(int a)
+	Cat()
 	{
-		age = a;
+		age = 1;
+		name = "Kaya";
 	}
-	string getName();
-	int getAge();
-	double getWeight();
-	
+	string getName()const;
+	int getAge()const;
+	double getWeight()const;
+
 	void setName(string a);
 	void setAge(int a);
 	void setWeight(double a);
-	void meow();
+	void meow()const;
 	~Cat();
 };
 
-string Cat::getName()
+string Cat::getName()const
 {
-	return name;
+	return this->name;
 }
-int Cat::getAge()
+int Cat::getAge()const
 {
-	return age;
+	return this->age;
 }
-double Cat::getWeight()
+double Cat::getWeight()const
 {
-	return weight;
+	return this->weight;
 }
 
 void Cat::setName(string a)
@@ -50,26 +51,49 @@ void Cat::setWeight(double a)
 {
 	weight = a;
 }
-void Cat::meow() 
+void Cat::meow()const
 {
-	cout << "ì•¼ì˜¹~" << endl;
+	cout << "¾ß¿Ë~" << endl;
 }
 Cat::~Cat()
 {
-	cout << "ì†Œë©¸" << endl;
+	cout << name<< "¼Ò¸ê" << endl;
 }
 
 int main()
 {
-	Cat Kaya(3);
-	Kaya.setName("ì¹´ì•¼");
-	Kaya.setWeight(3.5);
-	Kaya.meow();
-	cout<< "ì´ë¦„ : "<< Kaya.getName() << endl << "ë‚˜ì´ : " << Kaya.getAge() << endl << "ì²´ì¤‘ : " << Kaya.getWeight()<<endl;
+	Cat *pCat;
+	pCat = new Cat[10];
+	if (!pCat) {
+		cout << "¸Þ¸ð¸®ÇÒ´çÀÌ µÇÁö ¾Ê¾Ò½À´Ï´Ù.";
+		return 1;
+	}
+	for (int i = 0; i < 10; i++) // C++¿¡¼­´Â °¡´É
+		pCat[i].setAge(i);
+	for (int i = 0; i < 10; i++)
+		std::cout << i << "¹øÂ° °´Ã¼ÀÇ ³ªÀÌ´Â " <<
+		pCat[i].getAge() << " ÀÔ´Ï´Ù. " << std::endl;
+	delete[]pCat;
 	return 0;
+
 }
-//ì•¼ì˜¹~
-//ì´ë¦„ : ì¹´ì•¼
-//ë‚˜ì´ : 3
-//ì²´ì¤‘ : 3.5
-//ì†Œë©¸
+//0¹øÂ° °´Ã¼ÀÇ ³ªÀÌ´Â 0 ÀÔ´Ï´Ù.
+//1¹øÂ° °´Ã¼ÀÇ ³ªÀÌ´Â 1 ÀÔ´Ï´Ù.
+//2¹øÂ° °´Ã¼ÀÇ ³ªÀÌ´Â 2 ÀÔ´Ï´Ù.
+//3¹øÂ° °´Ã¼ÀÇ ³ªÀÌ´Â 3 ÀÔ´Ï´Ù.
+//4¹øÂ° °´Ã¼ÀÇ ³ªÀÌ´Â 4 ÀÔ´Ï´Ù.
+//5¹øÂ° °´Ã¼ÀÇ ³ªÀÌ´Â 5 ÀÔ´Ï´Ù.
+//6¹øÂ° °´Ã¼ÀÇ ³ªÀÌ´Â 6 ÀÔ´Ï´Ù.
+//7¹øÂ° °´Ã¼ÀÇ ³ªÀÌ´Â 7 ÀÔ´Ï´Ù.
+//8¹øÂ° °´Ã¼ÀÇ ³ªÀÌ´Â 8 ÀÔ´Ï´Ù.
+//9¹øÂ° °´Ã¼ÀÇ ³ªÀÌ´Â 9 ÀÔ´Ï´Ù.
+//Kaya¼Ò¸ê
+//Kaya¼Ò¸ê
+//Kaya¼Ò¸ê
+//Kaya¼Ò¸ê
+//Kaya¼Ò¸ê
+//Kaya¼Ò¸ê
+//Kaya¼Ò¸ê
+//Kaya¼Ò¸ê
+//Kaya¼Ò¸ê
+//Kaya¼Ò¸ê
